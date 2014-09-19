@@ -47,9 +47,9 @@ for BUILDPACK in $(cat $1/.buildpacks); do
       echo "=====> Detected Framework: $framework"
       $dir/bin/compile $1 $2 $3
 
-      if [ $? != 0 ]; then
-        exit 1
-      fi
+     # if [ $? != 0 ]; then
+     #   exit 1
+     # fi
 
       if [ -x $dir/bin/release ]; then
         $dir/bin/release $1 > $1/last_pack_release.out
